@@ -1,0 +1,51 @@
+.body-container {
+background-color: grey;
+}
+
+.spacer-div {
+height:10vh;    
+}
+.button-row {
+    height:40vh;
+}
+
+.simon-button {
+    margin-right:15px;
+    margin-bottom: 15px;
+    border:none;
+}
+
+#green-button{
+    border-radius: 250px 0px 0px 0px;
+    background-color: #009933;
+    background-image: radial-gradient(circle at 100% 100%, grey 150px, #009933 15px);
+}
+
+#red-button{
+    border-radius: 0px 250px 0px 0px;
+    background-color: #ff0000;
+    background-image: radial-gradient(circle at 0% 100%, grey 150px, #ff0000 15px);
+}
+
+#yellow-button {
+    border-radius: 0px 0px 0px 250px;
+    background-color:#ffff00;
+    background-image: radial-gradient(circle at 100% 0, grey 150px, #ffff00 15px);
+}
+
+#blue-button{
+    border-radius: 0px 0px 250px 0px;
+    background-color: #0066ff;
+    background-image: radial-gradient(circle at 0 0, grey 150px, #0066ff 15px);
+}
+
+.empty-div {
+    background-color: none;
+}
+
+/*
+        radial-gradient(circle at 0 0, grey 150px, #c00 15px),
+		radial-gradient(circle at 100% 0, grey 50px, #c00 15px),
+		radial-gradient(circle at 100% 100%, grey 50px, #c00 15px),
+		radial-gradient(circle at 0 100%, grey 50px, #c00 15px);
+		*/
