@@ -6,12 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" type="text/css" />
 	<link rel="stylesheet" href="assets/css/style.css" type="text/css" />
 	<title>Simon</title>
 </head>
 <body>
     <div class="body-container">
-        <div class="row spacer-div"></div>
+        <div class="row reset-row">
+            <div class="col-3 offset-8">
+                <button type= "button" class="btn-primary reset-button">Reset</button>
+            </div>
+            
+        </div>
         <!-- Game Container -->
         <div class="container no-gutters game-container">
             <div class="row button-row">
@@ -20,12 +26,15 @@
                 <button class="simon-button col-3 col-md-5" id="red-button">
                 </button>
             </div>
-            <div class="row button-row">
+            <div class="row button-row bottom-button-row">
                 <button class="simon-button col-3 col-md-5 offset-3 offset-class" id="yellow-button"></button>
                 <button class="simon-button col-3 col-md-5" id="blue-button"></button>
             </div>
         </div>
-        <div class="row spacer-div"></div>
+        <div class="row">
+            <div class="col-5 offset-2 score-div"><p>High Score: 0</p></div>
+            <div class="col-5 score-div"><p>Current Score: 0</p></div>
+        </div>
     </div>
 </body>
 </html>
