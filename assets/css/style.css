@@ -2,6 +2,10 @@
 background-color: grey;
 }
 
+.game-container {
+max-width: 100vw;    
+}
+
 .spacer-div {
 height:10vh;    
 }
@@ -16,36 +20,42 @@ height:10vh;
 }
 
 #green-button{
-    border-radius: 250px 0px 0px 0px;
-    background-color: #009933;
-    background-image: radial-gradient(circle at 100% 100%, grey 150px, #009933 15px);
+   background-color: #009933; 
 }
 
 #red-button{
-    border-radius: 0px 250px 0px 0px;
     background-color: #ff0000;
-    background-image: radial-gradient(circle at 0% 100%, grey 150px, #ff0000 15px);
 }
 
 #yellow-button {
-    border-radius: 0px 0px 0px 250px;
-    background-color:#ffff00;
-    background-image: radial-gradient(circle at 100% 0, grey 150px, #ffff00 15px);
+     background-color:#ffff00;
 }
 
 #blue-button{
-    border-radius: 0px 0px 250px 0px;
-    background-color: #0066ff;
-    background-image: radial-gradient(circle at 0 0, grey 150px, #0066ff 15px);
+  background-color: #0066ff;  
 }
 
 .empty-div {
     background-color: none;
 }
 
-/*
-        radial-gradient(circle at 0 0, grey 150px, #c00 15px),
-		radial-gradient(circle at 100% 0, grey 50px, #c00 15px),
-		radial-gradient(circle at 100% 100%, grey 50px, #c00 15px),
-		radial-gradient(circle at 0 100%, grey 50px, #c00 15px);
-		*/
+/*	Media Queries */
+@media screen and (min-width:768px) {#green-button {
+border-radius: 250px 0px 0px 0px;
+background-image: radial-gradient(circle at 100% 100%, grey 150px, #009933 15px);
+}}
+@media screen and (min-width:768px) {#red-button {
+border-radius: 0px 250px 0px 0px;
+background-image: radial-gradient(circle at 0% 100%, grey 150px, #ff0000 15px);
+}}
+@media screen and (min-width:768px) {#blue-button {
+border-radius: 0px 0px 250px 0px;
+background-image: radial-gradient(circle at 0 0, grey 150px, #0066ff 15px);
+}}
+@media screen and (min-width:768px) {#yellow-button {
+border-radius: 0px 0px 0px 250px;
+background-image: radial-gradient(circle at 100% 0, grey 150px, #ffff00 15px);
+}}
+@media screen and (min-width:768px) {.offset-class {
+margin-left:7%
+}}
