@@ -8,10 +8,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" type="text/css" />
 	<link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="assets/javascript/logic.js"></script>
 	<title>Simon</title>
 </head>
 <body>
     <div class="body-container">
+        <!-- Reset Row -->
         <div class="row reset-row">
             <div class="col-3 offset-8">
                 <button type= "button" class="btn-primary reset-button">Reset</button>
@@ -21,14 +24,14 @@
         <!-- Game Container -->
         <div class="container no-gutters game-container">
             <div class="row button-row">
-                <button class="simon-button col-3 col-md-5 offset-3 offset-class" id="green-button">
+                <button class="simon-button col-3 col-md-5 offset-3 offset-class green-button" id="green">
                 </button>
-                <button class="simon-button col-3 col-md-5" id="red-button">
+                <button class="simon-button col-3 col-md-5 red-button" id="red">
                 </button>
             </div>
             <div class="row button-row bottom-button-row">
-                <button class="simon-button col-3 col-md-5 offset-3 offset-class" id="yellow-button"></button>
-                <button class="simon-button col-3 col-md-5" id="blue-button"></button>
+                <button class="simon-button col-3 col-md-5 offset-3 offset-class yellow-button" id="yellow"></button>
+                <button class="simon-button col-3 col-md-5 blue-button" id="blue"></button>
             </div>
         </div>
         <div class="row">

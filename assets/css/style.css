@@ -29,25 +29,25 @@
     border: none;
 }
 
-#green-button {
+.green-button {
     background-color: #009933;
     border-radius: 90px 0px 0px 0px;
     background-image: radial-gradient(circle at 100% 100%, grey 90px, #009933 15px);
 }
 
-#red-button {
+.red-button {
     background-color: #ff0000;
     border-radius: 0px 90px 0px 0px;
     background-image: radial-gradient(circle at 0% 100%, grey 90px, #ff0000 15px);
 }
 
-#yellow-button {
+.yellow-button {
     background-color: #ffff00;
     border-radius: 0px 0px 0px 90px;
     background-image: radial-gradient(circle at 100% 0, grey 90px, #ffff00 15px);
 }
 
-#blue-button {
+.blue-button {
     background-color: #0066ff;
     border-radius: 0px 0px 90px 0px;
     background-image: radial-gradient(circle at 0 0, grey 90px, #0066ff 15px);
@@ -66,28 +66,28 @@
 /*	Media Queries */
 
 @media screen and (min-width:768px) {
-    #green-button {
+    .green-button {
         border-radius: 250px 0px 0px 0px;
         background-image: radial-gradient(circle at 100% 100%, grey 150px, #009933 15px);
     }
 }
 
 @media screen and (min-width:768px) {
-    #red-button {
+    .red-button {
         border-radius: 0px 250px 0px 0px;
         background-image: radial-gradient(circle at 0% 100%, grey 150px, #ff0000 15px);
     }
 }
 
 @media screen and (min-width:768px) {
-    #yellow-button {
+    .yellow-button {
         border-radius: 0px 0px 0px 250px;
         background-image: radial-gradient(circle at 100% 0, grey 150px, #ffff00 15px);
     }
 }
 
 @media screen and (min-width:768px) {
-    #blue-button {
+    .blue-button {
         border-radius: 0px 0px 250px 0px;
         background-image: radial-gradient(circle at 0 0, grey 150px, #0066ff 15px);
     }
@@ -101,5 +101,25 @@
 @media screen and (min-width:768px) {
     .score-div {
         font-size: 30px;
+    }
+}
+
+/* jQuery classes */
+
+.greenFlash {
+    -webkit-animation-name: light-up;
+    -webkit-animation-duration: 2s;
+    animation-name: light-up;
+    animation-duration: .3s;
+}
+
+@keyframes green-light-up {
+    from {
+        background-color: #009933;
+        background-image: radial-gradient(circle at 100% 100%, grey 150px, #009933 15px);
+    }
+    to {
+        background-color: #ffffff;
+        background-image: radial-gradient(circle at 100% 100%, grey 150px, #ffffff 15px);
     }
 }
