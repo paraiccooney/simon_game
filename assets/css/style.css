@@ -67,6 +67,12 @@
     display:none;
 }
 
+#simon {
+    text-align: center;
+    font-size: 64px;
+    text-decoration: underline;
+}
+
 /*	Media Queries */
 
 @media screen and (min-width:768px) {

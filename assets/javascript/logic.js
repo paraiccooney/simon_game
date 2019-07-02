@@ -1,4 +1,4 @@
-var computerScore = [1,2,3,4,1,2,3,4];
+var computerScore = [1,2,3];
 var playerScore = [];
 var currentGo = 0;
 var animationLength = 400;
@@ -29,7 +29,7 @@ $(".simon-button").on("click", function(){
     
     //$(".simon-button").on("click", function(){var color = this.id; playAudio(color)});
     /* check to see if button pushed matches button pressed by machine */
-    if (playerScore[playerScore.length - 1] != computerScore[playerScore.length - 1]){gameOver()}
+    //if (playerScore[playerScore.length - 1] != computerScore[playerScore.length - 1]){gameOver()}
         
     });
     
@@ -40,39 +40,48 @@ function nextPlayer () {
     activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
     if (activePlayer === 0){computerGo};
 }
-
-function computerGo (){
-    timer = 2000;
-    for (i = 0; i < 8; i++) {
-    setTimeout(function (){
-    var i; 
+ function computerGo(){
     //generate random number between 1-4
     var randomValue = Math.floor(Math.random() * (5 - 1) + 1);
-    console.log(randomValue);
+    console.log("the random value is "+randomValue);
     computerScore.push(randomValue);
-    //if statement to apply correct flash
-    if (randomValue == 1){
-    $("#green").addClass("greenFlash");
-    setTimeout(function (){$("#green").removeClass("greenFlash");}, animationLength)
-    } else if (randomValue == 2){
+    console.log("The computers score is "+computerScore);
+    //loop through each item in the array & flash
+    var i = 0;
+    var timer = 2000;
+    for (i = 0; i < computerScore.length; i++){console.log(computerScore[i])};
+    
+    setTimeout({
+    function(){
+    var i=0;
+    var timer = 2000;
+    for (i = 0; i < 4; i++){
+    if (computerScore[i] == 1) {
+        $("#green").addClass("greenFlash");
+        setTimeout(function() { $("#green").removeClass("greenFlash"); }, animationLength)
+    }
+    else if (computerScore[i] == 2) {
         $("#red").addClass("redFlash");
-    setTimeout(function (){$("#red").removeClass("redFlash");}, animationLength)
-    } else if (randomValue == 3){
+        setTimeout(function() { $("#red").removeClass("redFlash"); }, animationLength)
+    }
+    else if (computerScore[i] == 3) {
         $("#yellow").addClass("yellowFlash");
-    setTimeout(function (){$("#yellow").removeClass("yellowFlash");}, animationLength)
-    } else {
+        setTimeout(function() { $("#yellow").removeClass("yellowFlash"); }, animationLength)
+    }
+    else {
         $("#blue").addClass("blueFlash");
     setTimeout(function (){$("#blue").removeClass("blueFlash");}, animationLength);
-    }}, timer += increaser);}
-    //change player once computer has finished looping
+    }}
+    }}, timer+=increaser);
+   
     //nextPlayer();
-    //console.log(activePlayer);
-    //console.log(computerScore);
-}
+    }
+ 
+computerGo();
 
-
-function playAudio(color){
-    document.getElementById(color+'-sound').play(); console.log(".play has successfully been called")
+function playAudioBlue(){
+     var x = document.getElementById("blue-sound");
+    x.play();
 }
 
 function gameOver(){
@@ -110,5 +119,8 @@ function resetGame(){
     activePlayer=0;
     currentGo=0;
     $("#currentScore").html("Current Score: 0");
-    
 }
+
+
+//disable button
+//document.getElementById("red").disabled = true; 
