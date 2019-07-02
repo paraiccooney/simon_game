@@ -63,6 +63,10 @@
     font-weight: 150;
 }
 
+.audio-div {
+    display:none;
+}
+
 /*	Media Queries */
 
 @media screen and (min-width:768px) {
@@ -81,11 +85,10 @@
         margin-left: 10%
     }}
 
-/* jQuery classes */
 /* Flashes */
 .greenFlash {
         background-color: #ffffff;
-        background-image: radial-gradient(circle at 100% 100%, grey 150px, #ffffff 15px);
+        background-image: radial-gradient(circle at 100% 100%, grey 35%, #ffffff 15px);
     }
 .redFlash {
     background-color: #ffffff;

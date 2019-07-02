@@ -24,21 +24,26 @@
         <!-- Game Container -->
         <div class="container no-gutters game-container">
             <div class="row button-row">
-                <button class="simon-button col-3 col-md-5 offset-3 offset-class green-button" id="green">
+                <button class="simon-button col-3 col-md-5 offset-3 offset-class green-button" id="green" value="1">
                 </button>
-                <button class="simon-button col-3 col-md-5 red-button" id="red">
+                <button class="simon-button col-3 col-md-5 red-button" id="red" value="2">
                 </button>
             </div>
             <div class="row button-row bottom-button-row">
-                <button class="simon-button col-3 col-md-5 offset-3 offset-class yellow-button" id="yellow"></button>
-                <button class="simon-button col-3 col-md-5 blue-button" id="blue"></button>
+                <button class="simon-button col-3 col-md-5 offset-3 offset-class yellow-button" id="yellow" value="3"></button>
+                <button class="simon-button col-3 col-md-5 blue-button" id="blue" value="4"></button>
             </div>
         </div>
         <div class="row">
-            <div class="col-5 offset-2 score-div"><p>High Score: 0</p></div>
-            <div class="col-5 score-div"><p>Current Score: 0</p></div>
+            <div class="col-5 offset-2 score-div" id="highScore"><p>High Score: 0</p></div>
+            <div class="col-5 score-div" id="currentScore"><p>Current Score: 0</p></div>
         </div>
     </div>
+    <!-- Audio Files 
+    <div class="audio-div">
+       <audio controls>
+  <source src="assets/audio/Simon-blue-sound.mp3" type="audio/mpeg" id="blue-sound">
+</audio> 
+    </div> -->
 </body>
 </html>
-
