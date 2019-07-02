@@ -1,4 +1,4 @@
-var computerScore = [1,2,3];
+var computerScore = [2,2,3];
 var playerScore = [];
 var currentGo = 0;
 var animationLength = 400;
@@ -51,28 +51,33 @@ function nextPlayer () {
     var timer = 2000;
     for (i = 0; i < computerScore.length; i++){console.log(computerScore[i])};
     
-    setTimeout({
+    for (i = 0; i < computerScore.length; i++){
+    setTimeout(
     function(){
     var i=0;
     var timer = 2000;
-    for (i = 0; i < 4; i++){
-    if (computerScore[i] == 1) {
-        $("#green").addClass("greenFlash");
-        setTimeout(function() { $("#green").removeClass("greenFlash"); }, animationLength)
+    
+    if (computerScore[i] === 1) {
+        console.log("green flash")
+        /*$("#green").addClass("greenFlash");
+        setTimeout(function() { $("#green").removeClass("greenFlash"); }, animationLength)*/
     }
-    else if (computerScore[i] == 2) {
-        $("#red").addClass("redFlash");
-        setTimeout(function() { $("#red").removeClass("redFlash"); }, animationLength)
+    else if (computerScore[i] === 2) {
+        console.log("red flash")
+        /*$("#red").addClass("redFlash");
+        setTimeout(function() { $("#red").removeClass("redFlash"); }, animationLength)*/
     }
-    else if (computerScore[i] == 3) {
-        $("#yellow").addClass("yellowFlash");
-        setTimeout(function() { $("#yellow").removeClass("yellowFlash"); }, animationLength)
+    else if (computerScore[i] === 3) {
+        console.log("yellow flash")
+        /*$("#yellow").addClass("yellowFlash");
+        setTimeout(function() { $("#yellow").removeClass("yellowFlash"); }, animationLength)*/
     }
     else {
-        $("#blue").addClass("blueFlash");
-    setTimeout(function (){$("#blue").removeClass("blueFlash");}, animationLength);
+        console.log("blue flash")
+        /*$("#blue").addClass("blueFlash");
+    setTimeout(function (){$("#blue").removeClass("blueFlash");}, animationLength);*/
     }}
-    }}, timer+=increaser);
+    , timer+=increaser);}
    
     //nextPlayer();
     }
