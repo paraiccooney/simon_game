@@ -1,4 +1,4 @@
-var computerScore = [];
+var computerScore = [1,2,3,4,1,2,3,4];
 var playerScore = [];
 var currentGo = 0;
 var animationLength = 400;
@@ -34,6 +34,9 @@ $(document).ready(function() {
         $("#highScore").html("High Score:" + highScore);
     //7. run computerGo if player has completed sequence without triggering gameOver
         if (playerScore.length === computerScore.length) {playerScore=[]; computerGo()}
+        
+        //TEST AUDIO
+        playAudioBlue();
 });
 
 
@@ -46,17 +49,28 @@ function computerGo() {
     var randomValue = Math.floor(Math.random() * (5 - 1) + 1);
     //console.log("the random value is " + randomValue);
     computerScore.push(randomValue);
-    console.log("The computers score is " + computerScore);
-    //loop through each item in the array & flash
-    var i;
+    console.log("The latest computer score is " + randomValue);
+    //TO BE DELETED
+    /* var i;
     var timer = 2000;
     for (i = 0; i < computerScore.length; i++) {
         setTimeout(function() {
             console.log(i);
             //once iteration has stopped re-activate the buttons
-            if (i = computerScore.length) { activateButtons() }
+            if (i = computerScore.length +1) { activateButtons() }
         }, timer += 1000)
-    };
+    }; */
+    
+    //loop through each item in the array & flash
+    
+    var i=0;
+    (function myLoop(scoreArray){
+        setTimeout(function(){
+            console.log("scoreArray is "+ scoreArray.length);
+            console.log("i is "+ i);
+            if (++i < 9){myLoop(i)};
+        },2000);
+        })(computerScore);
 
     //IF STATEMENT TO BE PLACED IN ABOVE LOOP ONCE WORKING
     /*if (computerScore[i] === 1) {
@@ -85,6 +99,7 @@ function playAudioBlue() {
     var x = document.getElementById("blue-sound");
     x.play();
 }
+
 
 function gameOver() {
     /* stop the scores from incrementing */
