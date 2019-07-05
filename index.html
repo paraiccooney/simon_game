@@ -9,14 +9,25 @@
 	<title>Simon</title>
 </head>
 <body>
-    <div class="body-container">
-        <!-- Reset Row -->
-        <div class="row reset-row">
-            <div class="col-3 offset-8">
-                <button type= "button" class="btn-primary new-game-button">New Game</button>
-            </div>
-            
+<div class="body-container">
+    <!-- Reset Row -->
+    <div class="row reset-row">
+        <div class="col-3 offset-5">
+            <button type="button" class="btn-primary button-margin new-game-button">New Game</button>
         </div>
+        <div class="col-3 offset-1 button-margin">
+            <form>
+                <select class="btn-primary" id="difficulty-button">
+    <option class= "btn-primary" value="1400">Too Easy</option>
+    <option class= "btn-primary" value="1100">Easy</option>
+    <option class= "btn-primary" value="800">Medium</option>
+    <option class= "btn-primary" value="300">Hard</option>
+    <option class= "btn-primary" value="150">Pro</option>
+    <option class= "btn-primary" value="105">God tier</option>
+  </select>
+            </form>
+        </div>
+    </div>
         <!-- Game Container -->
         <div class="container no-gutters game-container">
             <div class="row button-row">

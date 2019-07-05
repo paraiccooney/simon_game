@@ -1,17 +1,10 @@
 var computerScore = [];
-
-function compScore(){
-    //generate random number between 1-4
-    var randomValue = Math.floor(Math.random() * (5 - 1) + 1);
-    computerScore.push(randomValue);
-    return computerScore;
-}
-
 var playerScore = [];
 var currentGo = 0;
 var animationLength = 400;
 var increaser = 500;
 var highScore = 0;
+let difficulty = 1400;
 
 $(document).ready(function() {
     //new game button
@@ -55,29 +48,31 @@ function computerGo() {
     //loop through each item in the array & flash
     var i=0;
     (function myLoop(scoreArray) {
+        var difficulty = document.getElementById("difficulty-button").value;
+        
         setTimeout(function() {
             if (computerScore[i] === 1) {
         console.log("green flash")
         $("#green").addClass("greenFlash");
-        setTimeout(function() { $("#green").removeClass("greenFlash"); }, animationLength)
+        setTimeout(function() { $("#green").removeClass("greenFlash"); }, difficulty - 100)
     }
     else if (computerScore[i] === 2) {
         console.log("red flash")
         $("#red").addClass("redFlash");
-        setTimeout(function() { $("#red").removeClass("redFlash"); }, animationLength)
+        setTimeout(function() { $("#red").removeClass("redFlash"); },difficulty - 100)
     }
     else if (computerScore[i] === 3) {
         console.log("yellow flash")
         $("#yellow").addClass("yellowFlash");
-        setTimeout(function() { $("#yellow").removeClass("yellowFlash"); }, animationLength)
+        setTimeout(function() { $("#yellow").removeClass("yellowFlash"); }, difficulty -100)
     }
     else {
         console.log("blue flash")
         $("#blue").addClass("blueFlash");
-    setTimeout(function (){$("#blue").removeClass("blueFlash");}, animationLength);
+    setTimeout(function (){$("#blue").removeClass("blueFlash");}, difficulty - 100);
     };
             if (++i < scoreArray.length) { myLoop(computerScore) } else {activateButtons()};
-        }, animationLength + 500);
+        }, difficulty);
     })(computerScore);
 }
 
@@ -147,3 +142,12 @@ function activateButtons() {
     document.getElementById("yellow").disabled = false;
     document.getElementById("blue").disabled = false;
 }
+
+function compScore(){
+    //generate random number between 1-4
+    var randomValue = Math.floor(Math.random() * (5 - 1) + 1);
+    computerScore.push(randomValue);
+    return computerScore;}
+    
+//function getDifficultyValue(){
+  //difficulty = document.getElementById("difficulty-button").value}
