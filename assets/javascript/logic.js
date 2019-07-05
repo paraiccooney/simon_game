@@ -1,4 +1,12 @@
-var computerScore = [1,2,3,4,1,2,3,4];
+var computerScore = [];
+
+function compScore(){
+    //generate random number between 1-4
+    var randomValue = Math.floor(Math.random() * (5 - 1) + 1);
+    computerScore.push(randomValue);
+    return computerScore;
+}
+
 var playerScore = [];
 var currentGo = 0;
 var animationLength = 400;
@@ -33,10 +41,7 @@ $(document).ready(function() {
         if (currentGo > highScore) { highScore = currentGo }
         $("#highScore").html("High Score:" + highScore);
     //7. run computerGo if player has completed sequence without triggering gameOver
-        if (playerScore.length === computerScore.length) {playerScore=[]; computerGo()}
-        
-        //TEST AUDIO
-        playAudioBlue();
+        if (playerScore.length === computerScore.length) {setTimeout(function() {playerScore=[]; computerGo()}, 1000);}
 });
 
 
@@ -44,36 +49,14 @@ $(document).ready(function() {
 
 function computerGo() {
     disableButtons();
-
-    //generate random number between 1-4
-    var randomValue = Math.floor(Math.random() * (5 - 1) + 1);
-    //console.log("the random value is " + randomValue);
-    computerScore.push(randomValue);
-    console.log("The latest computer score is " + randomValue);
-    //TO BE DELETED
-    /* var i;
-    var timer = 2000;
-    for (i = 0; i < computerScore.length; i++) {
-        setTimeout(function() {
-            console.log(i);
-            //once iteration has stopped re-activate the buttons
-            if (i = computerScore.length +1) { activateButtons() }
-        }, timer += 1000)
-    }; */
+    //pull global array within scope of this function
+    compScore();
     
     //loop through each item in the array & flash
-    
     var i=0;
-    (function myLoop(scoreArray){
-        setTimeout(function(){
-            console.log("scoreArray is "+ scoreArray.length);
-            console.log("i is "+ i);
-            if (++i < 9){myLoop(i)};
-        },2000);
-        })(computerScore);
-
-    //IF STATEMENT TO BE PLACED IN ABOVE LOOP ONCE WORKING
-    /*if (computerScore[i] === 1) {
+    (function myLoop(scoreArray) {
+        setTimeout(function() {
+            if (computerScore[i] === 1) {
         console.log("green flash")
         $("#green").addClass("greenFlash");
         setTimeout(function() { $("#green").removeClass("greenFlash"); }, animationLength)
@@ -92,7 +75,10 @@ function computerGo() {
         console.log("blue flash")
         $("#blue").addClass("blueFlash");
     setTimeout(function (){$("#blue").removeClass("blueFlash");}, animationLength);
-    }*/
+    };
+            if (++i < scoreArray.length) { myLoop(computerScore) } else {activateButtons()};
+        }, animationLength + 500);
+    })(computerScore);
 }
 
 function playAudioBlue() {
