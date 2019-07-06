@@ -4,11 +4,12 @@
 }
 
 .game-container {
-    max-width: 1100px;
+    max-width: 700px;
 }
 
 .reset-row {
     height: 10vh;
+    margin-bottom: 10px;
 }
 
 .button-row {

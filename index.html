@@ -4,18 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" type="text/css"/>
-	<link rel="stylesheet" href="assets/css/style.css" type="text/css" />
-	<title>Simon</title>
+    <meta name="keywords" content="Gaming, 1980s, Simon, Simon Game, Memory Game, Improve Memory, Classic Games">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+    <title>Simon</title>
 </head>
 <body>
 <div class="body-container">
     <!-- Reset Row -->
     <div class="row reset-row">
-        <div class="col-3 offset-5">
+        <div class="col-2 offset-3">
             <button type="button" class="btn-primary button-margin new-game-button">New Game</button>
         </div>
-        <div class="col-3 offset-1 button-margin">
+        <div class="col-2 offset-1 button-margin">
             <form>
                 <select class="btn-primary" id="difficulty-button">
     <option class= "btn-primary" value="1400">Too Easy</option>
@@ -23,7 +24,7 @@
     <option class= "btn-primary" value="800">Medium</option>
     <option class= "btn-primary" value="300">Hard</option>
     <option class= "btn-primary" value="150">Pro</option>
-    <option class= "btn-primary" value="105">God tier</option>
+    <option class= "btn-primary" value="105">Impossible</option>
   </select>
             </form>
         </div>
@@ -40,18 +41,19 @@
                 <button class="simon-button col-3 col-md-5 offset-3 offset-class yellow-button" id="yellow" value="3"></button>
                 <button class="simon-button col-3 col-md-5 blue-button" id="blue" value="4"></button>
             </div>
-        </div>
-        <div class="row">
+            <div class="row">
             <div class="col-5 offset-2 score-div" id="highScore"><p>High Score: 0</p></div>
             <div class="col-5 score-div" id="currentScore"><p>Current Score: 0</p></div>
         </div>
         <div class="row">
             <div class="col-4 offset-4" id="simon"><p>Simon</p></div>
         </div>
+        </div>
+        
     </div>
 <!-- Audio Files -->
 <audio controls>
-<source src='Simon-blue-sound.mp3' type='audio/mp3'>
+<source src='Simon-blue-sound.ogg' type='audio/ogg'>
 Your browser does not support the audio tag.
 </audio>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
