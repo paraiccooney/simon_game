@@ -5,6 +5,7 @@
 
 .game-container {
     max-width: 700px;
+    margin-left:-25px;
 }
 
 .reset-row {

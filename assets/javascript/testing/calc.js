@@ -46,3 +46,4 @@ function compScore(){
     var randomValue = Math.floor(Math.random() * (5 - 1) + 1);
     computerScore.push(randomValue);
     return computerScore;}
+    

@@ -4,7 +4,7 @@ var currentGo = 0;
 var animationLength = 400;
 var increaser = 500;
 var highScore = 0;
-let difficulty = 1400;
+let difficulty = 800;
 
 $(document).ready(function() {
     //new game button
@@ -18,22 +18,19 @@ $(document).ready(function() {
         $(this).addClass(color + "Flash");
         setTimeout(function() { $(".simon-button").removeClass(color + "Flash"); }, animationLength)
     });
-    // 2. push button value to score array
+    // 2. push button value to playerScore array
     $(".simon-button").on("click", function() {
         var value = this.value;
         playerScore.push(value);
-    //3. log player's score to console    
-        console.log(playerScore);
-    //4. check to see if button pushed matches button pressed by machine
+    //3. check to see if button pushed matches button pressed by machine
         if (playerScore[playerScore.length - 1] != computerScore[playerScore.length - 1]){gameOver()}    
-    //5. update current score
+    //4. update current score
         currentGo = playerScore.length;
         $("#currentScore").html("Current Score:" + currentGo);
-        console.log(currentGo);
-    //6. update high score if applicable
+    //5. update high score if applicable
         if (currentGo > highScore) { highScore = currentGo }
         $("#highScore").html("High Score:" + highScore);
-    //7. run computerGo if player has completed sequence without triggering gameOver
+    //6. run computerGo if player has completed sequence without triggering gameOver
         if (playerScore.length === computerScore.length) {setTimeout(function() {playerScore=[]; computerGo()}, 1000);}
 });
 
@@ -52,22 +49,18 @@ function computerGo() {
         
         setTimeout(function() {
             if (computerScore[i] === 1) {
-        console.log("green flash")
         $("#green").addClass("greenFlash");
         setTimeout(function() { $("#green").removeClass("greenFlash"); }, difficulty - 100)
     }
     else if (computerScore[i] === 2) {
-        console.log("red flash")
         $("#red").addClass("redFlash");
         setTimeout(function() { $("#red").removeClass("redFlash"); },difficulty - 100)
     }
     else if (computerScore[i] === 3) {
-        console.log("yellow flash")
         $("#yellow").addClass("yellowFlash");
         setTimeout(function() { $("#yellow").removeClass("yellowFlash"); }, difficulty -100)
     }
     else {
-        console.log("blue flash")
         $("#blue").addClass("blueFlash");
     setTimeout(function (){$("#blue").removeClass("blueFlash");}, difficulty - 100);
     };
@@ -83,6 +76,8 @@ function playAudioBlue() {
 
 
 function gameOver() {
+    //buttons are disabled to stop the user from triggering multiple gameOver alerts
+    disableButtons();
     /* stop the scores from incrementing */
     $("#currentScore").html("Current Score:" + (currentGo - 1));
     $("#highScore").html("High Score:" + (highScore - 1));
@@ -115,7 +110,6 @@ function resetGame() {
     console.log("the game has been reset");
     computerScore = [];
     playerScore = [];
-    activePlayer = 0;
     currentGo = 0;
     $("#currentScore").html("Current Score: 0");
 }
@@ -123,7 +117,6 @@ function resetGame() {
 function newGame (){
     computerScore = [];
     playerScore = [];
-    activePlayer = 0;
     currentGo = 0;
     $("#currentScore").html("Current Score: 0");
     computerGo();
@@ -148,6 +141,3 @@ function compScore(){
     var randomValue = Math.floor(Math.random() * (5 - 1) + 1);
     computerScore.push(randomValue);
     return computerScore;}
-    
-//function getDifficultyValue(){
-  //difficulty = document.getElementById("difficulty-button").value}
