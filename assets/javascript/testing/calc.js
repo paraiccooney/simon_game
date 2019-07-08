@@ -25,7 +25,7 @@ function gameOver() {
     increaserTwo = 600;
     for (i = 0; i < 4; i++) {
         setTimeout(function() {
-            gameOverFlash()
+            /* gameOverFlash removed for testing purposes */
         }, timer += increaserTwo)
     };
     /* alert user & resets game */
@@ -34,7 +34,6 @@ function gameOver() {
         
 function resetGame() {
     /* current score reset removed for testing purposes */
-    console.log("the game has been reset");
     return (computerScore = []);
     playerScore = [];
     activePlayer = 0;
