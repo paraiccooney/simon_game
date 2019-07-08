@@ -55,7 +55,7 @@ The Jasmine library was incorporated to automated a number of tests.  The below 
 - 5- Test that the disable function successfully adds the value of true to the disabled property to a HTML element.
 
 Automated testing can be found at the following gitHub pages link;
-GITHUB PAGES LINK FOR TESTING.HTML
+https://paraiccooney.github.io/simon_game/testing.html
 The source code for testing can also be viewed in the following files;
 testing.html - located at Simon_Game/testing.html
 calc.js & jasmine-testing.js - both located at Simon_Game/assets/testing/...
