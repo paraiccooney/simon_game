@@ -31,9 +31,18 @@ $(document).ready(function() {
         if (currentGo > highScore) { highScore = currentGo }
         $("#highScore").html("High Score:" + highScore);
     //6. run computerGo if player has completed sequence without triggering gameOver
-        if (playerScore.length === computerScore.length) {setTimeout(function() {playerScore=[]; computerGo()}, 1000);}
+        if (playerScore.length === computerScore.length) {
+            setTimeout(function() {
+                playerScore = [];
+                computerGo()
+            }, 1000);
+        }
 });
-
+    //7. play the correct sound
+    $(".simon-button").on("click", function() {
+        var color = this.id;
+        playAudio(color);
+    });
 
 })
 
@@ -50,34 +59,39 @@ function computerGo() {
         setTimeout(function() {
             if (computerScore[i] === 1) {
         $("#green").addClass("greenFlash");
-        setTimeout(function() { $("#green").removeClass("greenFlash"); }, difficulty - 100)
+        setTimeout(function() { $("#green").removeClass("greenFlash"); }, difficulty - 100);
+        playAudio("green");
     }
     else if (computerScore[i] === 2) {
         $("#red").addClass("redFlash");
-        setTimeout(function() { $("#red").removeClass("redFlash"); },difficulty - 100)
+        setTimeout(function() { $("#red").removeClass("redFlash"); },difficulty - 100);
+        playAudio("red");
     }
     else if (computerScore[i] === 3) {
         $("#yellow").addClass("yellowFlash");
-        setTimeout(function() { $("#yellow").removeClass("yellowFlash"); }, difficulty -100)
+        setTimeout(function() { $("#yellow").removeClass("yellowFlash"); }, difficulty -100);
+        playAudio("yellow");
     }
     else {
         $("#blue").addClass("blueFlash");
     setTimeout(function (){$("#blue").removeClass("blueFlash");}, difficulty - 100);
+    playAudio("blue");
     };
             if (++i < scoreArray.length) { myLoop(computerScore) } else {activateButtons()};
         }, difficulty);
     })(computerScore);
 }
 
-function playAudioBlue() {
-    var x = document.getElementById("blue-sound");
-    x.play();
+function playAudio(color) {
+    document.getElementById(color+"-sound").play();
 }
 
 
 function gameOver() {
     //buttons are disabled to stop the user from triggering multiple gameOver alerts
     disableButtons();
+    //play fail sound
+    document.getElementById("fail-sound").play();
     /* stop the scores from incrementing */
     $("#currentScore").html("Current Score:" + (currentGo - 1));
     $("#highScore").html("High Score:" + (highScore - 1));
@@ -115,6 +129,7 @@ function resetGame() {
 }
 
 function newGame (){
+    document.getElementById("start-sound").play();
     computerScore = [];
     playerScore = [];
     currentGo = 0;
