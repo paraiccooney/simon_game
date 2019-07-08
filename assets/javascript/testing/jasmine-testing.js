@@ -37,8 +37,12 @@ describe("Simon-button-testing", function() {
     });
     
     describe("Disable Buttons", function() {
-    it("should disable all Simon buttons", function() {
-        expect(disableButtons()).toBe(document.getElementById("green").disabled = true);
-    })
+   it("should disable all Simon buttons", function() {
+                disableButtons();
+                let res = document.getElementById('green').disabled;
+                
+                expect(res).toBe(true);
+                
+            })
 });
 });
