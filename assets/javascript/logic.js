@@ -4,7 +4,7 @@ var currentGo = 0;
 var animationLength = 400;
 var increaser = 500;
 var highScore = 0;
-let difficulty = 800;
+let difficulty;
 
 $(document).ready(function() {
     //new game button
@@ -23,13 +23,14 @@ $(document).ready(function() {
         var value = this.value;
         playerScore.push(value);
     //3. check to see if button pushed matches button pressed by machine
-        if (playerScore[playerScore.length - 1] != computerScore[playerScore.length - 1]){gameOver()}    
+        if (playerScore[playerScore.length - 1] != computerScore[playerScore.length - 1]){gameOver()}
+        else{    
     //4. update current score
         currentGo = playerScore.length;
         $("#currentScore").html("Current Score:" + currentGo);
     //5. update high score if applicable
         if (currentGo > highScore) { highScore = currentGo }
-        $("#highScore").html("High Score:" + highScore);
+        $("#highScore").html("High Score:" + highScore);}
     //6. run computerGo if player has completed sequence without triggering gameOver
         if (playerScore.length === computerScore.length) {
             setTimeout(function() {
@@ -92,9 +93,6 @@ function gameOver() {
     disableButtons();
     //play fail sound
     document.getElementById("fail-sound").play();
-    /* stop the scores from incrementing */
-    $("#currentScore").html("Current Score:" + (currentGo - 1));
-    $("#highScore").html("High Score:" + (highScore - 1));
     /* loop through flashes */
     var i = 0;
     timer = 400;
@@ -134,7 +132,7 @@ function newGame (){
     playerScore = [];
     currentGo = 0;
     $("#currentScore").html("Current Score: 0");
-    computerGo();
+    setTimeout(function() {computerGo()}, 1000);
 }
 
 function disableButtons() {
