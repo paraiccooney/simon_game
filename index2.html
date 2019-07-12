@@ -11,39 +11,78 @@
 </head>
 <body>
     <div class="body-container container-fluid">
-        <div class="row">
+        <div class="row remove-margin">
             <!-- Game Container -->
-            <div class="col-6 offset-3 game-container text-center">
-                Game container
-
+            <div class="col-12 col-sm-6 game-container text-center">
+                <!-- buttons row  -->
                 <div class="row button-row">
                     <div class="col-6 button-col text-center">
-                        new-game
+                        <button type="button" class="btn-primary button-margin new-game-button">New Game</button>
                     </div>
                     <div class="col-6 button-col text-center">
-                        difficulty
+                        <form>
+                            <select class="btn-primary" id="difficulty-button">
+                            <option class= "btn-primary" value="1400">Too Easy</option>
+                            <option class= "btn-primary" value="1100">Easy</option>
+                            <option class= "btn-primary" value="800" selected="selected">Medium</option>
+                            <option class= "btn-primary" value="300">Hard</option>
+                            <option class= "btn-primary" value="150">Pro</option>
+                            <option class= "btn-primary" value="105">Impossible</option>
+                          </select>
+                        </form>
                     </div>
                 </div>
+
+
+                <!-- game row  -->
                 <div class="row game-row">
                     <div class="col-12 game-col text-center">
-                        game
+                        <div class="row simon-button-row">
+                            <div class="col-6 button-container">
+                                <button class="simon-button col-12 green-button" id="green" value="1">
+                </button>
+                            </div>
+                            <div class="col-6 button-container-2">
+                                <button class="simon-button col-12 red-button" id="red" value="2"> 
+                            </div>
+                        </div>
+                        <div class="row simon-button-row">
+                            <div class="col-6 button-container">
+                                <button class="simon-button col-12 yellow-button" id="yellow" value="3"></button>
+                            </div>
+                            <div class="col-6 button-container-2">
+                                <button class="simon-button col-12 blue-button" id="blue" value="4"></button>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
+
+
+                <!-- score row  -->
                 <div class="row score-row">
-                    <div class="col-6 button-col text-center">
-                        high-score
+                    <div class="col-6 col-sm-4 score-col text-center">
+                        <div class="col-12 score-div" id="highScore">
+                            <p>High Score:<br>0</p>
+                        </div>
                     </div>
-                    <div class="col-6 button-col text-center">
-                        current-score
+                    <div class="col-4" id="simon">
+                        <p>Simon</p>
+                    </div>
+                    <div class="col-6 col-sm-4 score-col text-center">
+                        <div class="col-12 score-div" id="currentScore">
+                            <p>Current Score:<br>0</p>
+                        </div>
                     </div>
                 </div>
-                <div class="row simon-row">
-                    <div class="col-12 game-col text-center">
-                        Simon
-                    </div>
 
+                <!-- simon row hidden on larger screens  -->
+                <div class="row remove-margin">
+                    <div class="col-12 text-center remove-margin" id="simon-hidden">
+                        <p>Simon</p>
+                    </div>
                 </div>
+
 
 
 
