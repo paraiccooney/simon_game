@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="Gaming, 1980s, Simon, Simon Game, Memory Game, Improve Memory, Classic Games">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/style2.css" type="text/css" />
+    <title>Simon</title>
+</head>
+<body>
+    <div class="body-container container-fluid">
+        <div class="row">
+            <!-- Game Container -->
+            <div class="col-6 offset-3 game-container text-center">
+                Game container
+
+                <div class="row button-row">
+                    <div class="col-6 button-col text-center">
+                        new-game
+                    </div>
+                    <div class="col-6 button-col text-center">
+                        difficulty
+                    </div>
+                </div>
+                <div class="row game-row">
+                    <div class="col-12 game-col text-center">
+                        game
+                    </div>
+
+                </div>
+                <div class="row score-row">
+                    <div class="col-6 button-col text-center">
+                        high-score
+                    </div>
+                    <div class="col-6 button-col text-center">
+                        current-score
+                    </div>
+                </div>
+                <div class="row simon-row">
+                    <div class="col-12 game-col text-center">
+                        Simon
+                    </div>
+
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+    <!-- Audio Files -->
+    <audio src="assets/audio/Simon-green-sound.mp3" id="green-sound"></audio>
+    <audio src="assets/audio/Simon-red-sound.mp3" id="red-sound"></audio>
+    <audio src="assets/audio/Simon-yellow-sound.mp3" id="yellow-sound"></audio>
+    <audio src="assets/audio/Simon-blue-sound.mp3" id="blue-sound"></audio>
+    <audio src="assets/audio/Simon-fail-sound.mp3" id="fail-sound"></audio>
+    <audio src="assets/audio/Simon-start-sound.mp3" id="start-sound"></audio>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="assets/javascript/logic.js"></script>
+</body>
+</html>

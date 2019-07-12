@@ -1,0 +1,119 @@
+.body-container {
+    min-height:100vh;
+    background-color: grey;
+    padding-right:0px;
+    padding-left:0px;
+}
+
+.game-container {
+    background-color:orange;
+    padding-right:0px;
+    padding-left:0px;
+}
+
+.button-row, .game-row, .score-row, .simon-row{
+    margin-left:0px;
+margin-right:0px;
+}
+
+.game-row{
+    background-color:purple;    
+}
+
+.button-col {
+background-color:red;
+padding-right:0px;
+padding-left:0px;
+}
+
+.button-margin{
+    margin-top: 20px;
+}
+
+.bottom-button-row {
+    margin-bottom: 30px;
+}
+
+.simon-button {
+    margin-right: 15px;
+    margin-bottom: 15px;
+    border: none;
+}
+
+.green-button {
+    background-color: #009933;
+    border-radius: 75% 0% 0% 0%;;
+    background-image: radial-gradient(circle at 100% 100%, grey 35%, #009933 15px);
+}
+
+.red-button {
+    background-color: #ff0000;
+    border-radius: 0% 75% 0% 0%;
+    background-image: radial-gradient(circle at 0% 100%, grey 35%, #ff0000 15px);
+}
+
+.yellow-button {
+    background-color: #ffff00;
+    border-radius: 0% 0% 0% 75%;
+    background-image: radial-gradient(circle at 100% 0, grey 35%, #ffff00 15px);
+}
+
+.blue-button {
+    background-color: #0066ff;
+    border-radius: 0% 0% 75% 0%;
+    background-image: radial-gradient(circle at 0 0, grey 35%, #0066ff 15px);
+}
+
+.empty-div {
+    background-color: none;
+}
+
+.score-div {
+    font-size: 25px;
+    text-decoration: underline;
+    font-weight: 150;
+}
+
+.audio-div {
+    display:none;
+}
+
+#simon {
+    text-align: center;
+    font-size: 64px;
+    text-decoration: underline;
+}
+
+
+
+/*	Media Queries */
+
+@media screen and (min-width:768px) {
+    .offset-class {
+        margin-left: 7%
+    }
+}
+
+@media screen and (min-width:768px) {
+    .score-div {
+        font-size: 30px;
+    }
+}
+
+/* Flashes */
+.greenFlash {
+        background-color: #ffffff;
+        background-image: radial-gradient(circle at 100% 100%, grey 35%, #ffffff 15px);
+    }
+.redFlash {
+    background-color: #ffffff;
+    background-image: radial-gradient(circle at 0% 100%, grey 35%, #ffffff 15px);
+}
+.yellowFlash {
+    background-color: #ffffff;
+    background-image: radial-gradient(circle at 100% 0, grey 35%, #ffffff 15px);
+}
+.blueFlash {
+    background-color: #ffffff;
+    background-image: radial-gradient(circle at 0 0, grey 35%, #ffffff 15px);
+}
