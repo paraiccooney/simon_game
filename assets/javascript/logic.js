@@ -112,7 +112,10 @@ function gameOver() {
     increaserTwo = 600;
     for (i = 0; i < 4; i++) {
         setTimeout(function() {
-            gameOverFlash()
+            gameOverFlash("red")
+            gameOverFlash("green")
+            gameOverFlash("blue")
+            gameOverFlash("yellow")
         }, timer += increaserTwo)
     };
     /* alert user & resets game */
@@ -122,15 +125,9 @@ function gameOver() {
     }, 3300);;
 }
 
-function gameOverFlash() {
-    $("#green").addClass("greenFlash");
-    setTimeout(function() { $("#green").removeClass("greenFlash"); }, animationLength);
-    $("#blue").addClass("blueFlash");
-    setTimeout(function() { $("#blue").removeClass("blueFlash"); }, animationLength);
-    $("#red").addClass("redFlash");
-    setTimeout(function() { $("#red").removeClass("redFlash"); }, animationLength);
-    $("#yellow").addClass("yellowFlash");
-    setTimeout(function() { $("#yellow").removeClass("yellowFlash"); }, animationLength)
+function gameOverFlash(color) {
+    $("#"+color).addClass(color+"Flash");
+    setTimeout(function() { $("#"+color).removeClass(color+"Flash"); }, animationLength);
 }
 
 function resetGame() {
