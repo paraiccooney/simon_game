@@ -44,7 +44,9 @@ padding-left:0px;
 }
 
 .score-col{
-    border:solid 1px black;
+    border:solid 3px black;
+    border-right: none;
+    border-left: none;
 }
 
 .bottom-button-row {
@@ -119,12 +121,12 @@ padding-left:0px;
 
 @media screen and (min-width:576px) {
     .score-div, #simon {
-        font-size: 25px;
+        font-size: 20px;
     }
 }
 @media screen and (min-width:768px) {
     .score-div, #simon {
-        font-size: 35px;
+        font-size: 30px;
     }
 }
 @media screen and (min-width:576px) {
@@ -142,7 +144,12 @@ padding-left:0px;
         margin-left:25%
     }
 }
-
+@media screen and (min-width:576px) {
+    .score-col{
+    border-right: solid 3px black;
+    border-left: solid 3px black;
+}
+}
 /* Flashes */
 .greenFlash {
         background-color: #ffffff;
