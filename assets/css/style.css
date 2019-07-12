@@ -1,34 +1,64 @@
 .body-container {
     min-height:100vh;
     background-color: grey;
+    padding-right:0px;
+    padding-left:0px;
 }
 
 .game-container {
-    max-width: 700px;
-    margin-left:-25px;
+    padding-right:0px;
+    padding-left:0px;
 }
 
-.reset-row {
-    height: 10vh;
-    margin-bottom: 10px;
+.game-row {
+    height:55vh;
+    margin-bottom:2vh;
 }
 
-.button-row {
-    height: 30vh;
+
+.button-row, .game-row, .score-row{
+    margin-left:0px;
+margin-right:0px;
 }
 
-.button-margin{
-    margin-top: 20px;
+.button-container{
+    padding-right:2px;
+    padding-bottom:5px;
+    padding-left:20px;
+}
+.button-container-2{
+    padding-left:2px;
+    padding-bottom:5px;
+    padding-right:10px;
+}
+
+.button-row{
+    margin-bottom:5%;
+    margin-top:5%;
+}
+
+
+.button-col, .score-col {
+padding-right:0px;
+padding-left:0px;
+}
+
+.score-col{
+    border:solid 1px black;
 }
 
 .bottom-button-row {
     margin-bottom: 30px;
 }
+.simon-button-row{
+    height:50%;
+    margin-right:0px;
+}
 
 .simon-button {
-    margin-right: 15px;
-    margin-bottom: 15px;
     border: none;
+    height:100%;
+    width:100%;
 }
 
 .green-button {
@@ -59,10 +89,8 @@
     background-color: none;
 }
 
-.score-div {
-    font-size: 25px;
-    text-decoration: underline;
-    font-weight: 150;
+.score-div, #simon {
+    font-size: 15px;
 }
 
 .audio-div {
@@ -70,37 +98,48 @@
 }
 
 #simon {
-    text-align: center;
-    font-size: 64px;
     text-decoration: underline;
+    display:none;
+}
+ #simon-hidden {
+     font-size:40px;
+     font-weight: 150;
+ }
+
+.game-col{
+    padding-right:0px;
 }
 
-
-
+.remove-margin {
+    margin-right:0px;
+}
 /*	Media Queries */
 
-@media screen and (min-width:768px) {
-    .offset-class {
-        margin-left: 7%
+@media screen and (min-width:576px) {
+    .score-div, #simon {
+        font-size: 25px;
     }
 }
-
 @media screen and (min-width:768px) {
-    .game-container {
-    margin-left:15%;
-}
-}
-
-@media screen and (min-width:768px) {
-    .score-div {
-        font-size: 30px;
+    .score-div, #simon {
+        font-size: 35px;
     }
 }
-
-@media screen and (min-width:1100px) {
+@media screen and (min-width:576px) {
+    #simon {
+        display:block;
+    }
+}
+@media screen and (min-width:576px) {
+    #simon-hidden {
+        display:none;
+    }
+}
+@media screen and (min-width:576px) {
     .game-container {
-        margin-left: 20%
-    }}
+        margin-left:25%
+    }
+}
 
 /* Flashes */
 .greenFlash {

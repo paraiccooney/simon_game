@@ -31,12 +31,12 @@ $(document).ready(function() {
         else {
             //4. update current score
             currentGo = playerScore.length;
-            $("#currentScore").html("Current Score:" + currentGo);
+            $("#currentScore").html("Current Score:<br>" + currentGo);
             //5. update high score if applicable
             if (currentGo > highScore) {
                 highScore = currentGo
             }
-            $("#highScore").html("High Score:" + highScore);
+            $("#highScore").html("High Score:<br>" + highScore);
         }
         //6. run computerGo if player has completed sequence without triggering gameOver
         if (playerScore.length === computerScore.length) {
@@ -137,7 +137,7 @@ function resetGame() {
     computerScore = [];
     playerScore = [];
     currentGo = 0;
-    $("#currentScore").html("Current Score: 0");
+    $("#currentScore").html("Current Score:<br> 0");
 }
 
 function newGame() {
@@ -145,7 +145,7 @@ function newGame() {
     computerScore = [];
     playerScore = [];
     currentGo = 0;
-    $("#currentScore").html("Current Score: 0");
+    $("#currentScore").html("Current Score:<br> 0");
     setTimeout(function() { computerGo() }, 1000);
 }
 

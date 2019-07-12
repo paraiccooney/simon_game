@@ -10,56 +10,94 @@
     <title>Simon</title>
 </head>
 <body>
-<div class="body-container">
-    <!-- Reset Row -->
-    <div class="row reset-row">
-        <div class="col-2 offset-3">
-            <button type="button" class="btn-primary button-margin new-game-button">New Game</button>
-        </div>
-        <div class="col-2 offset-1 button-margin">
-            <form>
-                <select class="btn-primary" id="difficulty-button">
-    <option class= "btn-primary" value="1400">Too Easy</option>
-    <option class= "btn-primary" value="1100">Easy</option>
-    <option class= "btn-primary" value="800" selected="selected">Medium</option>
-    <option class= "btn-primary" value="300">Hard</option>
-    <option class= "btn-primary" value="150">Pro</option>
-    <option class= "btn-primary" value="105">Impossible</option>
-  </select>
-            </form>
-        </div>
-    </div>
-        <!-- Game Container -->
-        <div class="container no-gutters game-container">
-            <div class="row button-row">
-                <button class="simon-button col-3 col-md-5 offset-3 offset-class green-button" id="green" value="1">
-                </button>
-                <button class="simon-button col-3 col-md-5 red-button" id="red" value="2">
-                </button>
-            </div>
-            <div class="row button-row bottom-button-row">
-                <button class="simon-button col-3 col-md-5 offset-3 offset-class yellow-button" id="yellow" value="3"></button>
-                <button class="simon-button col-3 col-md-5 blue-button" id="blue" value="4"></button>
-            </div>
-            <div class="row">
-            <div class="col-5 offset-2 score-div" id="highScore"><p>High Score: 0</p></div>
-            <div class="col-5 score-div" id="currentScore"><p>Current Score: 0</p></div>
-        </div>
-        <div class="row">
-            <div class="col-4 offset-4" id="simon"><p>Simon</p></div>
-        </div>
-        </div>
-        
-    </div>
-<!-- Audio Files -->
-<audio src="assets/audio/Simon-green-sound.mp3" id="green-sound"></audio>
-<audio src="assets/audio/Simon-red-sound.mp3" id="red-sound"></audio>
-<audio src="assets/audio/Simon-yellow-sound.mp3" id="yellow-sound"></audio>
-<audio src="assets/audio/Simon-blue-sound.mp3" id="blue-sound"></audio>
-<audio src="assets/audio/Simon-fail-sound.mp3" id="fail-sound"></audio>
-<audio src="assets/audio/Simon-start-sound.mp3" id="start-sound"></audio>
+    <div class="body-container container-fluid">
+        <div class="row remove-margin">
+            <!-- Game Container -->
+            <div class="col-12 col-sm-6 game-container text-center">
+                <!-- buttons row  -->
+                <div class="row button-row">
+                    <div class="col-6 button-col text-center">
+                        <button type="button" class="btn-primary button-margin new-game-button">New Game</button>
+                    </div>
+                    <div class="col-6 button-col text-center">
+                        <form>
+                            <select class="btn-primary" id="difficulty-button">
+                            <option class= "btn-primary" value="1400">Too Easy</option>
+                            <option class= "btn-primary" value="1100">Easy</option>
+                            <option class= "btn-primary" value="800" selected="selected">Medium</option>
+                            <option class= "btn-primary" value="300">Hard</option>
+                            <option class= "btn-primary" value="150">Pro</option>
+                            <option class= "btn-primary" value="105">Impossible</option>
+                          </select>
+                        </form>
+                    </div>
+                </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="assets/javascript/logic.js"></script>
+
+                <!-- game row  -->
+                <div class="row game-row">
+                    <div class="col-12 game-col text-center">
+                        <div class="row simon-button-row">
+                            <div class="col-6 button-container">
+                                <button class="simon-button col-12 green-button" id="green" value="1">
+                </button>
+                            </div>
+                            <div class="col-6 button-container-2">
+                                <button class="simon-button col-12 red-button" id="red" value="2"> 
+                            </div>
+                        </div>
+                        <div class="row simon-button-row">
+                            <div class="col-6 button-container">
+                                <button class="simon-button col-12 yellow-button" id="yellow" value="3"></button>
+                            </div>
+                            <div class="col-6 button-container-2">
+                                <button class="simon-button col-12 blue-button" id="blue" value="4"></button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- score row  -->
+                <div class="row score-row">
+                    <div class="col-6 col-sm-4 score-col text-center">
+                        <div class="col-12 score-div" id="highScore">
+                            <p>High Score:<br>0</p>
+                        </div>
+                    </div>
+                    <div class="col-4" id="simon">
+                        <p>Simon</p>
+                    </div>
+                    <div class="col-6 col-sm-4 score-col text-center">
+                        <div class="col-12 score-div" id="currentScore">
+                            <p>Current Score:<br>0</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- simon row hidden on larger screens  -->
+                <div class="row remove-margin">
+                    <div class="col-12 text-center remove-margin" id="simon-hidden">
+                        <p>Simon</p>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+    <!-- Audio Files -->
+    <audio src="assets/audio/Simon-green-sound.mp3" id="green-sound"></audio>
+    <audio src="assets/audio/Simon-red-sound.mp3" id="red-sound"></audio>
+    <audio src="assets/audio/Simon-yellow-sound.mp3" id="yellow-sound"></audio>
+    <audio src="assets/audio/Simon-blue-sound.mp3" id="blue-sound"></audio>
+    <audio src="assets/audio/Simon-fail-sound.mp3" id="fail-sound"></audio>
+    <audio src="assets/audio/Simon-start-sound.mp3" id="start-sound"></audio>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="assets/javascript/logic.js"></script>
 </body>
 </html>
