@@ -1,4 +1,4 @@
-# [Play Simon]([https://paraiccooney.github.io/simon_game/](https://paraiccooney.github.io/simon_game/))
+# [Play Simon](https://paraiccooney.github.io/simon_game/)
 
 
 This project is a browser friendly version of the classic 1970/1980's game "Simon".  It is designed to be engaging visually with the user & reactive to the device on which it is being viewed.
@@ -40,7 +40,7 @@ In summary the hint button would allow the user to see which button they have to
 
 ## Technologies Utilised
 **Jasmine** - this project utilises Jasmine to assist with testing (further outlined below)
-**Bootstrap** - Bootstrap's flexbox use was adopted to arrange for a more productive outlay build.
+**Bootstrap** - Bootstrap's flexbox use was adopted to arrange for a more productive outlay build.  It was also used to encorporate a mobile first design approach.
 **jQuery** - was used to simplify DOM manipulation.
 
 ## TESTING
@@ -66,6 +66,8 @@ A number of manual tests were carried out on this project to ensure it is workin
 - New Game
 After a number of computerGo functions were complete I viewed the computerScore & playerScore arrays by entering them into Chrome's developer tools console to ensure that they were populated.  I then clicked the new game button & again viewed the arrays.  The playerScore array was empty while the computerScore was now populated with a single number as intended.
 During this test I also verified that the correct flash was applied (ie. that as the value in the array was 2 the yellow button had it's flash class added & removed).  I then reiterated this test until the computerArray returned different values & verified that the correct flash had been applied.
+- Responsive Design
+I used a mobile first approach while developing.  As a result there are a number of bootstrap columns which change their properties are larger sizes.  I manually tested these breakpoints in the browser & also used Chrome Developer tools "Toogle Device Toolbar" option to view the site as it would display on different mobiles & tablets & verified the display was as intended.
 - Difficulty Selector
 Upon load I verified that the medium class was selected as default for the difficulty dropdown selector.
 I continued to progress through the game until I had a sufficient computerScore array for the computer to cycle through.  I then selected higher & lower difficulties from the dropdown & observed the speed through the iterations responding accordingly.  I also concretely verified that the difficulty variable had be updated to the dropdowns value by viewing the variable in Chrome's developer tools.
