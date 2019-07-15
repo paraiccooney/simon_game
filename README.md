@@ -63,6 +63,10 @@ calc.js & jasmine-testing.js - both located at Simon_Game/assets/testing/...
 **Manual**
 A number of manual tests were carried out on this project to ensure it is working as intended;
 
+- Browsers
+I manually tested this project in Microsoft Edge (Internet Explorer) & Mozilla Firefox to ensure there were no issues when using different browsers.
+- JShint
+I ran my Javascript code through JS Hint (https://jshint.com/) to flag any potential bugs.  None were returned.
 - New Game
 After a number of computerGo functions were complete I viewed the computerScore & playerScore arrays by entering them into Chrome's developer tools console to ensure that they were populated.  I then clicked the new game button & again viewed the arrays.  The playerScore array was empty while the computerScore was now populated with a single number as intended.
 During this test I also verified that the correct flash was applied (ie. that as the value in the array was 2 the yellow button had it's flash class added & removed).  I then reiterated this test until the computerArray returned different values & verified that the correct flash had been applied.
@@ -92,7 +96,10 @@ https://paraiccooney.github.io/simon_game/
 I obtained the linear gradient code from the following page;
 http://lea.verou.me/2011/03/beveled-corners-negative-border-radius-with-css3-gradients/
 I tweeked this code to overcome the fact that CSS does not allow for negative values to be entered for border-radius & used this to round my four coloured buttons.
-I obtained the audio files by downloading a video of the simon game & converting into mp3.  I then used the enclosed cutting tool (https://mp3cut.net/) to isolate each button sound & save it to it's own mp3 file.
+I obtained the audio files by downloading a video of the simon game from YouTube & converting into mp3.  I then used the enclosed cutting tool (https://mp3cut.net/) to isolate each button sound & save it to it's own mp3 file.
+
+## MEDIA
+As outlined above audio was obtained from YouTube & converted to mp3 & clipped for use in this project.  No other external media was used.
 
 ## Acknowledgements
 I would like to thank the Code Institute community on Slack for their assistance with this project.  I would also like to thank the contributors to Stack Overflow for their assistance by answering questions similar to those I held at separate points throughout the project.
